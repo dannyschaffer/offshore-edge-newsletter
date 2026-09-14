@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>The Offshore Edge</title>
+<meta name="description" content="The Offshore Edge, a monthly read on offshore CX and back office, from Afrishore BPO.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root{
+    --ground:#e7edee; --surface:#ffffff; --sunk:#f3f8f8;
+    --ink:#16211f; --ink-soft:#54646a; --ink-faint:#8496981f;
+    --accent:#0c8f89; --accent-deep:#0a5f63; --link:#0a726f;
+    --green:#00a89e; --green-deep:#00726b;
+    --band:#0a5257; --band-ink:#eafcfa; --band-soft:#9fd9d6;
+    --tint:#e7f5f3; --tint-line:#bfe3df;
+    --line:#e2e9e9; --rule:#12312f;
+    --chip:#fbf5e8; --chip-line:#e6d3a6; --chip-ink:#8a6a25;
+    --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ground:#0b1113; --surface:#141c1e; --sunk:#101819;
+      --ink:#e8efef; --ink-soft:#9db0b1; --ink-faint:#e8efef14;
+      --accent:#2bbfb5; --accent-deep:#7fded6; --link:#5fd3cb;
+      --green:#19c3b8; --green-deep:#5fd8ce;
+      --band:#0a4a4e; --band-ink:#eafcfa; --band-soft:#8fd2cd;
+      --tint:#10302e; --tint-line:#1e4a47;
+      --line:#243233; --rule:#3aa39c;
+      --chip:#241f14; --chip-line:#4a3f22; --chip-ink:#d8b969;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0b1113; --surface:#141c1e; --sunk:#101819;
+    --ink:#e8efef; --ink-soft:#9db0b1; --ink-faint:#e8efef14;
+    --accent:#2bbfb5; --accent-deep:#7fded6; --link:#5fd3cb;
+    --green:#19c3b8; --green-deep:#5fd8ce;
+    --band:#0a4a4e; --band-ink:#eafcfa; --band-soft:#8fd2cd;
+    --tint:#10302e; --tint-line:#1e4a47;
+    --line:#243233; --rule:#3aa39c;
+    --chip:#241f14; --chip-line:#4a3f22; --chip-ink:#d8b969;
+  }
+
+  *{box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:var(--sans);line-height:1.55;
+    -webkit-font-smoothing:antialiased;padding:26px 16px 56px}
+  .wrap{max-width:640px;margin:0 auto}
+  a{color:var(--link)}
+  .rl{color:var(--link);text-decoration:none;font-weight:600}
+  .rl:hover{text-decoration:underline}
+  .rl:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  /* internal note (outside the email) */
+  .brief{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:14px 16px;margin-bottom:20px}
+  .brief p{margin:0;font-size:13px;color:var(--ink-soft)}
+  .brief .k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);margin:0 0 6px}
+  .brief b{color:var(--accent-deep)}
+  .chip{font-family:var(--mono);font-size:9.5px;letter-spacing:.03em;background:var(--chip);color:var(--chip-ink);
+    border:1px solid var(--chip-line);padding:1px 6px;border-radius:5px;white-space:nowrap;vertical-align:1px}
+
+  /* the email */
+  .paper{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;
+    box-shadow:0 20px 44px -34px #0a5f6355}
+
+  .band{background:linear-gradient(115deg,var(--band) 0%,var(--band) 40%,var(--green) 100%);color:var(--band-ink);padding:22px 30px}
+  .band .mast{font-weight:700;font-size:26px;letter-spacing:-.01em;margin:0;display:flex;align-items:baseline;gap:8px}
+  .band .mast small{font-weight:500;font-size:12px;color:var(--band-soft);letter-spacing:.02em}
+  .band .meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--band-soft);margin:8px 0 0}
+
+  .pad{padding:24px 30px}
+  .sec-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);margin:0 0 10px}
+
+  .open p{margin:0 0 12px;font-size:15px}
+  .open ul{margin:0 0 14px;padding:0;list-style:none;display:grid;gap:8px}
+  .open li{font-size:14.5px;display:flex;gap:9px}
+  .open li b{font-weight:600}
+  .thesis{font-size:15px;border-left:3px solid var(--accent);padding-left:13px;color:var(--ink)}
+  .thesis a{font-weight:600}
+
+  .divider{height:1px;background:var(--line);margin:0 30px}
+  .tmv{background:var(--tint);border-top:1px solid var(--tint-line);border-bottom:1px solid var(--tint-line)}
+  .tmv ol{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+  .tmv li{font-size:14px;display:flex;gap:9px;align-items:baseline}
+  .tmv .em{flex:0 0 auto}
+
+  .story{padding:24px 30px;border-bottom:1px solid var(--line)}
+  .story .no{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--green-deep);font-weight:600}
+  .story .cat{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+  .story .head{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:9px;flex-wrap:wrap}
+  .story h3{font-size:20px;font-weight:700;line-height:1.2;margin:0 0 10px;letter-spacing:-.01em;text-wrap:balance}
+  .story p{margin:0 0 11px;font-size:14.5px}
+  .fig{font-weight:700;color:var(--accent-deep);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .angle{background:var(--sunk);border-left:3px solid var(--green);border-radius:8px;padding:11px 14px;margin:0 0 12px;font-size:14px}
+  .angle b{color:var(--green-deep);font-weight:700}
+  .also{font-size:12.5px;color:var(--ink-soft)}
+  .also b{font-weight:600;color:var(--ink)}
+
+  .worth{background:var(--tint);border-top:1px solid var(--tint-line);border-bottom:1px solid var(--tint-line);padding:22px 30px}
+  .worth .wh3{font-size:19px;font-weight:700;line-height:1.2;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .worth .wp{font-size:14.5px;margin:0 0 10px}
+
+  .house{margin:0 30px;background:var(--band);color:var(--band-ink);border-radius:10px;padding:20px 22px}
+  .house .k{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--band-soft);margin:0 0 12px}
+  .house .row{display:flex;gap:11px;padding:9px 0;border-top:1px solid #ffffff1f;font-size:14px}
+  .house .row:first-of-type{border-top:0}
+  .house a{color:#fff;font-weight:600}
+  .house .fig{color:#fff}
+
+  .ledger .k{margin-top:0}
+  .ledger ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+  .ledger li{font-size:14px;display:grid;grid-template-columns:64px 1fr;gap:10px}
+  .ledger .d{font-family:var(--mono);font-size:11px;color:var(--ink-soft);padding-top:2px}
+
+  .close{padding:22px 30px;border-top:2px solid var(--rule)}
+  .close p{margin:0 0 10px;font-size:15px}
+  .close .sig{font-weight:600}
+  .fb{background:var(--sunk);border-top:2px solid var(--green);padding:16px 30px;text-align:center;font-size:13.5px}
+  .fb b{display:block;margin-bottom:6px}
+  .fb a{margin:0 6px;font-weight:600}
+
+  .foot{background:var(--band);color:var(--band-soft);padding:18px 30px;font-size:11.5px;text-align:center}
+  .foot b{color:var(--band-ink);font-weight:600}
+  .foot a{color:var(--band-soft)}
+
+  .recipe{margin-top:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:15px 17px}
+  .recipe .k{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);margin:0 0 9px}
+  .recipe p{margin:0;font-size:12.5px;color:var(--ink-soft)}
+  .note{text-align:center;font-size:11.5px;color:var(--ink-soft);margin-top:20px}
+
+  @media (max-width:560px){.band,.pad,.story,.close,.fb,.foot{padding-left:18px;padding-right:18px}.house{margin-left:18px;margin-right:18px}.divider{margin:0 18px}.ledger li{grid-template-columns:56px 1fr}}
+  @media (prefers-reduced-motion:no-preference){.paper,.recipe{animation:rise .3s ease both}}
+  @keyframes rise{from{opacity:.5;transform:translateY(6px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<article class="paper">
+
+    <!-- MASTHEAD -->
+    <div class="band">
+      <h1 class="mast">The Offshore Edge <small>from Afrishore BPO</small></h1>
+      <p class="meta">Monthly · September 2026</p>
+    </div>
+
+    <!-- THE OPEN -->
+    <div class="pad open">
+      <p class="sec-label">The open</p>
+      <p>Three things worth your attention if you run customer operations or back office, plus the one question underneath them.</p>
+      <ul>
+        <li><span>🇿🇦</span><span><b>South Africa's talent pool</b> just had its strongest year since 2018.</span></li>
+        <li><span>🗣️</span><span><b>AI can translate every word</b> of a support conversation and still miss what the customer meant.</span></li>
+        <li><span>✈️</span><span><b>Travel's growth is back</b>, and it brought the margin pressure with it.</span></li>
+      </ul>
+      <p class="thesis">The through-line: the offshore decision is shifting from "how cheap" to "who actually understands my customer." Agree, or seeing it differently? <a href="#">Hit reply</a>, it reaches Danny.</p>
+    </div>
+
+    <!-- THREE-MINUTE VERSION -->
+    <div class="pad tmv">
+      <p class="sec-label">The three-minute version</p>
+      <ol>
+        <li><span class="em">🇿🇦</span><a class="rl" href="#">South Africa adds 26,346 GBS export jobs, its best year since 2018</a></li>
+        <li><span class="em">🗣️</span><a class="rl" href="#">The AI translated every word. It still missed what the customer meant</a></li>
+        <li><span class="em">✈️</span><a class="rl" href="#">Phocuswright Europe: growth is back, margins aren't</a></li>
+        <li><span class="em">🧭</span><a class="rl" href="#">South Africa vs the Philippines: the 2026 trade-off</a></li>
+        <li><span class="em">🛡️</span><a class="rl" href="#">Why regulated work is the next wave to move offshore</a></li>
+      </ol>
+    </div>
+
+    <!-- STORIES -->
+    <div class="story">
+      <div class="head"><span class="no">01 / 04</span><span class="cat">🇿🇦 Sector</span></div>
+      <h3>South Africa's talent pool is scaling faster than the headlines</h3>
+      <p>South Africa's global-business-services sector added <span class="fig">26,346</span> new export jobs in 2025, its strongest year since 2018, and is targeting <span class="fig">500,000</span> by 2030. <span style="color:var(--ink-soft);font-size:13px">BPESA / Everest Group</span></p>
+      <div class="angle"><b>The angle:</b> the pool of Western-market-ready agents you can tap is deepening fast, which is why more regulated work (insurance, financial services, iGaming) is moving to SA, not only to Asia.</div>
+      <a class="rl" href="#">Read the sector data →</a>
+      <p class="also" style="margin-top:11px"><b>Also in this section:</b> BPESA's 2025 sector report · the case for a second offshore location</p>
+    </div>
+
+    <div class="story">
+      <div class="head"><span class="no">02 / 04</span><span class="cat">🗣️ CX &amp; AI</span></div>
+      <h3>The AI translated every word correctly. It still missed what the customer meant.</h3>
+      <p>AI translation has made multilingual support look solved, and for routine contacts it is. But fluency isn't understanding: indirect distress, regulated explanations, and high-trust moments still need a native speaker who reads the room, not just the words.</p>
+      <div class="angle"><b>The angle:</b> native-language capacity is an operating asset to plan for, not a checkbox the AI vendor ticks, exactly the multilingual model Afrishore serves from South Africa across European time zones.</div>
+      <a class="rl" href="#">Read Anton's full issue →</a>
+      <p class="also" style="margin-top:11px"><b>Also in this section:</b> Issue 8, spotting the customer who arrived carrying weight</p>
+    </div>
+
+    <div class="worth">
+      <p class="sec-label">Worth a look · from our LinkedIn</p>
+      <h3 class="wh3">Phocuswright Europe: growth is back, but so is the margin squeeze</h3>
+      <p class="wp">At Phocuswright Europe in Barcelona, Kobus and Anton heard the same theme in nearly every conversation: growth has returned, but so has pressure on margins and CX. For travel brands, the challenge isn't demand, it's scaling without compromising service.</p>
+      <a class="rl" href="https://www.linkedin.com/feed/update/urn:li:activity:7475533331808579584">Read the post →</a>
+    </div>
+
+    <div class="story">
+      <div class="head"><span class="no">03 / 04</span><span class="cat">🧭 Destinations</span></div>
+      <h3>South Africa vs the Philippines: the trade-off in 2026</h3>
+      <p>The two most-compared offshore CX destinations pull in different directions. The Philippines still wins on raw scale and is marginally cheaper per agent; South Africa wins on retention and cultural fit for Western markets, with agent attrition running materially lower, which quietly narrows the cost gap once hiring and training are counted.</p>
+      <div class="angle"><b>The angle:</b> for a US or UK buyer the real question isn't "which is cheaper per seat," it's "which keeps the team that learns my customer."</div>
+      <a class="rl" href="https://afrishorebpo.com/south-africa-vs-philippines/">Read the full comparison →</a>
+    </div>
+
+    <div class="story">
+      <div class="head"><span class="no">04 / 04</span><span class="cat">🛡️ Regulated</span></div>
+      <h3>Why regulated work is the next wave to move offshore</h3>
+      <p>The insurance BPO market alone is set to grow from <span class="fig">$68.4bn</span> in 2026 to <span class="fig">$93.1bn</span> by 2031. Compliance used to be the reason regulated work stayed onshore; increasingly it's the reason it can move, as buyers choose partners on the strength of their certifications and controls, not just cost. <span style="color:var(--ink-soft);font-size:13px">Mordor Intelligence</span></p>
+      <div class="angle"><b>The angle:</b> the question has flipped from "can we risk it offshore" to "which partner can prove the controls," ISO 27001, HIPAA, PCI-DSS.</div>
+      <a class="rl" href="https://www.mordorintelligence.com/industry-reports/insurance-bpo-services-industry">Read the market outlook →</a>
+    </div>
+
+    <!-- HOUSE / FROM AFRISHORE -->
+    <div class="house">
+      <p class="k">From Afrishore</p>
+      <div class="row"><span>🏆</span><span>Ranked <span class="fig">#3 of 40</span> in Outsource Accelerator's Top BPO Companies in South Africa (2026).</span></div>
+      <div class="row"><span>📊</span><span>New: the Impact Sourcing 2025/26 report, 669 jobs created, R1.2bn foreign revenue, 63% women in leadership. <a href="#">Read it →</a></span></div>
+      <div class="row"><span>✉️</span><span>Anton's <a href="#">Human in the Loop CX</a> newsletter, every issue on the AI-plus-human question.</span></div>
+    </div>
+
+    <!-- LEDGER -->
+    <div class="pad ledger">
+      <p class="sec-label">From Afrishore, this month</p>
+      <ul>
+        <li><span class="d">Sep 11</span><span><a class="rl" href="#">Featured in Outsource Accelerator's Top 40 BPO Companies in South Africa</a></span></li>
+        <li><span class="d">Jul 08</span><span><a class="rl" href="#">Three new client campaigns launched across the US and UK</a></span></li>
+        <li><span class="d">Jun 01</span><span><a class="rl" href="#">Named Company of the Year for pairing human-led service with scalable tech</a></span></li>
+      </ul>
+    </div>
+
+    <!-- CLOSE -->
+    <div class="close">
+      <p>That's the month. The pattern under all of it: the winners aren't the cheapest or the most automated, they're the ones who know which moments still need a person.</p>
+      <p class="sig">See you next month 👋<br>Danny</p>
+    </div>
+
+    <!-- FEEDBACK -->
+    <div class="fb">
+      <b>How was this issue?</b>
+      <a href="#">Nailed it</a>·<a href="#">It was fine</a>·<a href="#">Missed the mark</a>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="foot">
+      <b>The Offshore Edge</b> · from Afrishore BPO · <a href="https://afrishorebpo.com">afrishorebpo.com</a><br>
+      <a href="#">Manage subscription</a> · <a href="#">Forward to a colleague</a>
+    </div>
+  </article>
+</div>
+</body>
+</html>
