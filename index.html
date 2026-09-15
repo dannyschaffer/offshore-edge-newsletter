@@ -67,10 +67,14 @@
   .paper{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;
     box-shadow:0 20px 44px -34px #0a5f6355}
 
-  .band{background:linear-gradient(115deg,#0a5257 0%,#0a5257 38%,#00a89e 100%);color:#eafcfa;padding:26px 30px}
-  .band .mast{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.02em;margin:0;display:flex;align-items:baseline;gap:8px}
-  .band .mast small{font-weight:500;font-size:12px;color:var(--band-soft);letter-spacing:.02em}
-  .band .meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--band-soft);margin:8px 0 0}
+  .band{position:relative;overflow:hidden;background:radial-gradient(130% 150% at 86% 12%, #12b3a6 0%, #0a7168 32%, #0a5257 63%, #063539 100%);color:#eafcfa;padding:34px 32px 30px}
+  .band-motif{position:absolute;right:-26px;top:50%;transform:translateY(-50%);width:220px;height:220px;color:#ffffff;opacity:.12;pointer-events:none}
+  .band-inner{position:relative;z-index:1}
+  .issuetag{font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#9fe9e1;margin:0 0 13px;display:flex;align-items:center;gap:11px}
+  .issuetag::before{content:"";width:24px;height:2px;background:#00c9bb;display:inline-block}
+  .band .mast{font-family:var(--display);font-weight:700;font-size:clamp(30px,7vw,40px);letter-spacing:-.025em;line-height:1;margin:0}
+  .band .mast .edge{color:#3fe0d3}
+  .band .from{font-size:13px;color:#a8ded9;margin:13px 0 0;letter-spacing:.01em}
 
   .pad{padding:24px 30px}
   .sec-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);margin:0 0 10px}
@@ -146,8 +150,12 @@
 
     <!-- MASTHEAD -->
     <div class="band">
-      <h1 class="mast">The Offshore Edge <small>from Afrishore BPO</small></h1>
-      <p class="meta">Monthly · September 2026</p>
+      <svg class="band-motif" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round" aria-hidden="true"><path d="M12 106 L60 14 L108 106"/><path d="M40 106 L60 66 L80 106"/></svg>
+      <div class="band-inner">
+        <p class="issuetag">Issue 01 · September 2026</p>
+        <h1 class="mast">The Offshore <span class="edge">Edge</span></h1>
+        <p class="from">A monthly briefing from Afrishore BPO</p>
+      </div>
     </div>
 
     <!-- THE OPEN -->
