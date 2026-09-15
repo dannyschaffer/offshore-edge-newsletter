@@ -8,7 +8,7 @@
 <meta name="description" content="The Offshore Edge, a monthly read on offshore CX and back office, from Afrishore BPO.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap">
 <style>
   :root{
     --ground:#e7edee; --surface:#ffffff; --sunk:#f3f8f8;
@@ -19,8 +19,9 @@
     --tint:#e7f5f3; --tint-line:#bfe3df;
     --line:#e2e9e9; --rule:#12312f;
     --chip:#fbf5e8; --chip-line:#e6d3a6; --chip-ink:#8a6a25;
-    --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-    --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+    --sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --display:"Poppins","Manrope",system-ui,sans-serif;
+    --mono:"Poppins",system-ui,sans-serif;
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
@@ -67,7 +68,7 @@
     box-shadow:0 20px 44px -34px #0a5f6355}
 
   .band{background:linear-gradient(115deg,#0a5257 0%,#0a5257 38%,#00a89e 100%);color:#eafcfa;padding:26px 30px}
-  .band .mast{font-weight:700;font-size:26px;letter-spacing:-.01em;margin:0;display:flex;align-items:baseline;gap:8px}
+  .band .mast{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.02em;margin:0;display:flex;align-items:baseline;gap:8px}
   .band .mast small{font-weight:500;font-size:12px;color:var(--band-soft);letter-spacing:.02em}
   .band .meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--band-soft);margin:8px 0 0}
 
@@ -91,7 +92,7 @@
   .story .no{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--green-deep);font-weight:600}
   .story .cat{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
   .story .head{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:9px;flex-wrap:wrap}
-  .story h3{font-size:20px;font-weight:700;line-height:1.2;margin:0 0 10px;letter-spacing:-.01em;text-wrap:pretty}
+  .story h3{font-family:var(--display);font-size:20px;font-weight:700;line-height:1.22;margin:0 0 10px;letter-spacing:-.015em;text-wrap:pretty}
   .story p{margin:0 0 11px;font-size:14.5px}
   .fig{font-weight:700;color:var(--accent-deep);font-variant-numeric:tabular-nums;white-space:nowrap}
   .angle{background:var(--sunk);border-left:3px solid var(--green);border-radius:8px;padding:11px 14px;margin:0 0 12px;font-size:14px}
@@ -100,14 +101,9 @@
   .also b{font-weight:600;color:var(--ink)}
 
   .worth{background:var(--tint);border-top:1px solid var(--tint-line);border-bottom:1px solid var(--tint-line);padding:22px 30px}
-  .worth .wh3{font-size:19px;font-weight:700;line-height:1.2;margin:0 0 8px;letter-spacing:-.01em;text-wrap:pretty}
+  .worth .wh3{font-family:var(--display);font-size:19px;font-weight:700;line-height:1.22;margin:0 0 8px;letter-spacing:-.015em;text-wrap:pretty}
   .worth .wp{font-size:14.5px;margin:0 0 10px}
   .storyimg{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center top;border-radius:8px;display:block;margin:0 0 14px}
-  .stats{display:flex;gap:10px;flex-wrap:wrap}
-  .stat{flex:1 1 126px;background:var(--tint);border:1px solid var(--tint-line);border-radius:10px;padding:16px 10px 13px;text-align:center}
-  .stat .ic{font-size:19px;display:block;margin-bottom:8px}
-  .stat .num{font-size:23px;font-weight:700;color:var(--accent-deep);font-variant-numeric:tabular-nums;line-height:1;display:block}
-  .stat .lbl{font-size:11px;color:var(--ink-soft);margin-top:6px;display:block;line-height:1.3}
 
   .house{margin:0 30px;background:var(--band);color:var(--band-ink);border-radius:10px;padding:20px 22px}
   .house .k{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--band-soft);margin:0 0 12px}
@@ -224,19 +220,9 @@
     <!-- HOUSE / FROM AFRISHORE -->
     <div class="house">
       <p class="k">From Afrishore</p>
+      <div class="row"><span>🏆</span><span>Ranked <span class="fig">#3 of 40</span> in Outsource Accelerator's Top BPO Companies in South Africa (2026).</span></div>
       <div class="row"><span>📊</span><span>New: the Impact Sourcing 2025/26 report, 669 jobs created, R1.2bn foreign revenue, 63% women in leadership. <a href="https://afrishorebpo.com/impact-sourcing-in-south-african-bpo/">Read it →</a></span></div>
       <div class="row"><span>✉️</span><span>Anton's <a href="https://www.linkedin.com/in/anton-vukic">Human in the Loop CX</a> newsletter, every issue on the AI-plus-human question.</span></div>
-    </div>
-
-    <!-- BY THE NUMBERS -->
-    <div class="pad">
-      <p class="sec-label">By the numbers</p>
-      <div class="stats">
-        <div class="stat"><span class="ic">🏆</span><span class="num">#3 of 40</span><span class="lbl">Top BPO in South Africa, OA 2026</span></div>
-        <div class="stat"><span class="ic">🔁</span><span class="num">95.6%</span><span class="lbl">Team retention</span></div>
-        <div class="stat"><span class="ic">💷</span><span class="num">40-60%</span><span class="lbl">Cost saving vs onshore</span></div>
-        <div class="stat"><span class="ic">🗓️</span><span class="num">30+ yrs</span><span class="lbl">Business-services heritage</span></div>
-      </div>
     </div>
 
     <!-- LEDGER -->
